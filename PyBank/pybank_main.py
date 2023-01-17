@@ -68,8 +68,9 @@ with open(csv_path) as csvfile:
 output_file = os.path.join('pybank_final.txt')
 
 output_lines = ['Financial Analysis', '-------------------------------------------------', f'Total Months: {total_months}', f'Total Net: ${total_net}', f'Average Change: ${profit_average}', f'Greatest Increase in Profits: {greatest_increase_month} (${greatest_increase})', f'Greatest Decrease in Profits: {greatest_decrease_month} (${greatest_decrease})']
+
 #open the output file
 with open(output_file, "w") as file:
 
-    #write the header row
+    #write each line in the text file reference: https://www.pythontutorial.net/python-basics/python-create-text-file/
     file.write('\n'.join(output_lines))
