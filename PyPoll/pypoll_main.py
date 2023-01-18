@@ -34,7 +34,15 @@ with open(csv_path) as csvfile:
         #Calculate the Total Number of Votes cast
         #.sum()?
         total_votes = len(ballot_id)
-    
+
+#open the output file
+with open(output_file, "w") as file:
+    #write each line in the text file reference: https://www.pythontutorial.net/python-basics/python-create-text-file/
+    file.write('Election Results\n')
+    file.write('-------------------------------------------------\n')
+    file.write(f'Total Votes: {total_votes}\n')
+    file.write('-------------------------------------------------\n')
+
     print('Election Results')
     print('-------------------------------------------------')
     print(f'Total Votes: {total_votes}')
@@ -73,7 +81,7 @@ with open(csv_path) as csvfile:
 
         #Calculate the percentage of votes each candidate won
         #candidate votes/total votes = % rounded to .000 decimals
-        percent = round(int(candidate_count) / int(len(candidate_list)) * 100, 3)
+        percent = round(float(candidate_count) / float(len(candidate_list)) * 100, 3)
 
         #add percent for each unique candidat w/ votes to pct candidate list
         pct_candidate.append(percent)
@@ -87,8 +95,12 @@ with open(csv_path) as csvfile:
         if last_count < candidate_count:
             Winner = candidate
 
-        print(f'{candidate}: {percent}% ({candidate_count})')
+        candidate_results = (f'{candidate}: {percent}% ({candidate_count})')
+        print(candidate_results)
         print('-------------------------------------------------')
+
+        file.write(f'{candidate_results}\n')
+        file.write('-------------------------------------------------\n')
 
         #Reset last vote counts and all other candidate counts
         last_count = candidate_count
@@ -97,6 +109,9 @@ with open(csv_path) as csvfile:
     print(f"Winner: {Winner}")
     print('-------------------------------------------------')
 
+    file.write(f'Winner: {Winner}\n')
+    file.write('-------------------------------------------------\n')
+
     #for candidate in candidates_unique:
             #for candidate_index in candidate_list:
                 #candidate_index = candidate_list.index(candidate)
@@ -104,21 +119,13 @@ with open(csv_path) as csvfile:
 
 #output_lines = ['Election Results', '-------------------------------------------------', f'Total Votes: {total_votes}', f'{candidate}: {percent}% ({candidate_count})', '-------------------------------------------------', f"Winner: {Winner}",'-------------------------------------------------']
 
-#open the output file
-with open(output_file, "w") as file:
 
-    #write each line in the text file reference: https://www.pythontutorial.net/python-basics/python-create-text-file/
-    file.write('Election Results\n')
-    file.write('-------------------------------------------------\n')
-    file.write(f'Total Votes: {total_votes}\n')
-    file.write('-------------------------------------------------\n')
-    for candidate in candidates_unique:
-        candidate_index = candidates_unique.index(candidate)
+    #for candidate in candidates_unique:
+        #candidate_index = candidates_unique.index(candidate)
         #how do you index the candidate from here?
         #{percent[candidate_index]}% {candidate_count[candidate_index]})\n')
-        file.writelines(f'{candidate}: {percent}% ({candidate_count}) \n')
-    file.write('-------------------------------------------------\n')
-    file.write(f'Winner: {Winner}\n')
+        #file.writelines(f'{candidate}: {percent[0]}% ({candidate_count[0]}) \n')
+    
 
 
 
