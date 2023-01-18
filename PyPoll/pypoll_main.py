@@ -112,20 +112,6 @@ with open(output_file, "w") as file:
     file.write(f'Winner: {Winner}\n')
     file.write('-------------------------------------------------\n')
 
-    #for candidate in candidates_unique:
-            #for candidate_index in candidate_list:
-                #candidate_index = candidate_list.index(candidate)
-            #print(candidate_index)
-
-#output_lines = ['Election Results', '-------------------------------------------------', f'Total Votes: {total_votes}', f'{candidate}: {percent}% ({candidate_count})', '-------------------------------------------------', f"Winner: {Winner}",'-------------------------------------------------']
-
-
-    #for candidate in candidates_unique:
-        #candidate_index = candidates_unique.index(candidate)
-        #how do you index the candidate from here?
-        #{percent[candidate_index]}% {candidate_count[candidate_index]})\n')
-        #file.writelines(f'{candidate}: {percent[0]}% ({candidate_count[0]}) \n')
-    
 
 
 
