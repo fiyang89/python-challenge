@@ -64,23 +64,25 @@ PYPOLL
     5. Open the csv file and code for skiping the header row
     6. Use a for loop to add the ballot ID, county, and candidates data from the csv file into the variables
     7. Calculate the total votes using len() and print the total. First task complete.
-    8. Calculate the list of unique candidates by creating a variable called name = [] and setting it equal to the first value in the candidate list
-    9. Using a for loop, search for a name in the candidate list. 
-    10. Using an if statement, add the name from the candidate list that is not in the new candidate_unique list. Second task complete.
-    11. Calculate the votes per candidate by setting a new variable, candidate_count = 0. Then, set a new variable, candidate equal to the first value in the 
+    8. To make exporting less of a hassle, open the output file here and start writing the Total Votes. 
+    9. Calculate the list of unique candidates by creating a variable called name = [] and setting it equal to the first value in the candidate list
+    10. Using a for loop, search for a name in the candidate list. 
+    11. Using an if statement, add the name from the candidate list that is not in the new candidate_unique list. Second task complete.
+    12. Calculate the votes per candidate by setting a new variable, candidate_count = 0. Then, set a new variable, candidate equal to the first value in the 
         candidate list. Finally, set a new variable, last_count = 0.
-    10. Using a for loop, find a candidate in the list of unique candidates
-    11. Within that loop, use another for loop to look for a unique candidate who has a vote in candidate list. Use an if statement to test if a candidate has a 
+    13. Using a for loop, find a candidate in the list of unique candidates
+    14. Within that loop, use another for loop to look for a unique candidate who has a vote in candidate list. Use an if statement to test if a candidate has a 
         vote, then add it to the candidate_count
-    12. Calculate the percentage by using the candidate_count value and dividing it by the candidate list count. Multiply by 100.
-    13. Add each percent value by appending it to a new list. Third task complete.
-    14. Calculate the number of candidate votes by adding the candidate_count to a new list. Fourth task complete.
-    15. Now, use another if statement to determine the winner. The last candidates vote counts should be less than the candidate vote counts so the winner is equal 
+    15. Calculate the percentage by using the candidate_count value and dividing it by the candidate list count. Multiply by 100.
+    16. Add each percent value by appending it to a new list. Third task complete.
+    17. Calculate the number of candidate votes by adding the candidate_count to a new list. Fourth task complete.
+    18. Now, use another if statement to determine the winner. The last candidates vote counts should be less than the candidate vote counts so the winner is equal 
         to the candidate from the unique candidate list. Fifth task complete.
-    16. Print the candidate, percent, and candidate_count.
-    17. Reset all values for the last count and candidate count
-    18. Print the winner
-    19. Export results to a text file using output_file
+    19. Create a new variable candidate_results that contains candidate, percent, and candidate_count. Print.
+    20. Write the output file line for the list of candidates containing candidate name, percent, and vote count using candidate_results 
+    21. Reset all values for the last count and candidate count
+    22. Print the winner
+    23. Write the output file line for the winner.
   
   FOR FURTHER HELP: Reference www.stackoverflow.com, www.pythontutorial.net/python-basics/python-create-text-file/
   
